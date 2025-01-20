@@ -4,6 +4,13 @@ import {Box} from '@mui/material';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 export default function Homepage(){
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return(
     <>
       <Box sx={{width:'100%'}}>
@@ -20,18 +27,21 @@ export default function Homepage(){
                 <img className='roommate-right-img' src='./assets/image/students-jumping.png'></img>
               </div>
             </div>
-              <div className='pagenation'>
-                <a href="#diversity">
-                  <img className='pagenation-icon' src='./assets/image/arrow.png'></img>
-                </a>
+            <div className='pagenation'>
+              <a href="#diversity" onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('diversity');
+              }}>
+                <img className='pagenation-icon' src='./assets/image/arrow.png' alt='Arrow'/>
+              </a>
             </div>
           </div>
 
 
-          <div className='diversity-box'>
+          <div id={"diversity"} className='diversity-box'>
             <div className='diversity' id='diversity'>
               <div className='diversity-left'>
-                <img className='diversity-img'src='./assets/image/diversity.png' ></img>
+                <img className='diversity-img' src='./assets/image/diversity.png'></img>
               </div>
               <div className='diversity-right'>
                 <div className='diversity-title-1'>We are crazy for</div>
@@ -40,16 +50,19 @@ export default function Homepage(){
               </div>
             </div>
             <div className='pagenation'>
-              <a href="#room">
+              <a href="#roombox" onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('roombox');
+              }}>
                 <img className='pagenation-icon' src='./assets/image/arrowWhite.png'></img>
               </a>
             </div>
           </div>
 
 
-          <div className='room-box'>
+          <div id={"roombox"} className='room-box'>
             <div className='room' id='room'>
-                <div className='room-left'>
+            <div className='room-left'>
                   <div className='room-title-1'>
                     <span className='font-size-1'>Find a</span>
                     <span className='font-size-2'>ROOM</span>
