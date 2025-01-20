@@ -15,7 +15,7 @@ export default function Homepage(){
     <>
       <Box sx={{width:'100%'}}>
         <div className='body'>
-          <div className='roommate-box'>
+          <div id={"roommate"} className='roommate-box'>
           <Header/>
             <div className='roommate'>
               <div className='roommate-left'>

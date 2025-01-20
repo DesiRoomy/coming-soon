@@ -11,13 +11,6 @@
   flex-direction: column;
   /* padding:0px 20px; */
 }
-@media screen and (max-width: 768px) {
-  .roommate {
-    padding-top: 50px;
-    padding-right: 10px;
-    padding-left: -5px;
-  }
-}
 .roommate{
   max-width: 1440px;
   height: 95%;
@@ -34,7 +27,7 @@
 }
 .roommate-left{
   width: 50%;
-  padding-left: 130px;
+  padding-left: 20px;
 }
 .roommate-left .roommate-title-1{
   color: #0f7ca5;
