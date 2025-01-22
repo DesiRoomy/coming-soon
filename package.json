@@ -12,15 +12,16 @@
     "@testing-library/user-event": "^13.5.0",
     "aws-sdk": "^2.1193.0",
     "axios": "^1.7.9",
-    "browserify": "^17.0.1",
     "dns": "^0.2.2",
     "fs": "^0.0.1-security",
     "mongodb": "^6.12.0",
     "mongodb-client-encryption": "^6.1.1",
+    "net": "^1.0.2",
     "node-gyp": "^11.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
+    "timers-browserify": "^2.0.12",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -49,9 +50,12 @@
   },
   "devDependencies": {
     "assert": "^2.0.0",
+    "browserify": "^17.0.1",
+    "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "process": "^0.11.10",
     "react-router-dom": "^6.3.0",
+    "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "url": "^0.11.0",
     "webpack": "^5.97.1"
