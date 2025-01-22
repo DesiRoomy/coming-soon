@@ -26,7 +26,6 @@ const Footer = () => {
   const handleChange = (e) => {
     const value  = e.target.value;
     setEmail(value);
-    console.log("Email: ", email);
   };
   return(
     <>
@@ -34,7 +33,7 @@ const Footer = () => {
         <div className='footer-main'>
           <div>
             <div className='footer-title'>JOIN THE WAITLIST</div>
-            <div>
+            <div className={'footer-email-block'}>
               <form onSubmit={submitHandler}>
                 <TextField
                     className={"footer-email"}
@@ -48,7 +47,7 @@ const Footer = () => {
                       focused: { style: { color: 'white' } }
                     }}
                 />
-                <Button type="submit" onSubmit={submitHandler} variant="contained" color="primary" style={{marginTop:'25px',width:'100%',background:'#f4dcf8',color:'#6e6a6a',fontFamily:'Montserrat',fontStyle:'normal',border:'1px solid #6e6a6a',lineHeight:'35px',minWidth:'300px'}}>Submit</Button>
+                <Button type="submit" className={'footer-submit'} onSubmit={submitHandler} variant="contained" color="primary" style={{marginTop:'25px',width:'100%',background:'#f4dcf8',color:'#6e6a6a',fontFamily:'Montserrat',fontStyle:'normal',border:'1px solid #6e6a6a',lineHeight:'35px',minWidth:'300px'}}>Submit</Button>
               </form>
             </div>
 
