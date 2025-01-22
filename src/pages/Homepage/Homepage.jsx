@@ -19,7 +19,7 @@ export default function Homepage(){
           <Header/>
             <div className='roommate'>
               <div className='roommate-left'>
-                <div className='roommate-title-1'>Let's us help your find</div>
+                <div className='roommate-title-1'>Let us help you find your</div>
                 <div className='roommate-title-2'>ROOMMATE</div>
                 <div className='roommate-title-3'>We understand finding a new home as a student is hard, especially in a different country... And it shouldn't be that way!.</div>
               </div>

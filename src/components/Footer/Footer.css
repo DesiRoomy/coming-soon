@@ -49,6 +49,13 @@
 
 
 @media screen and (max-width:768px){
+  .footer-email-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+  }
   .footer-email{
     margin-left: 50px;
     width: 100%;
@@ -56,5 +63,6 @@
   .footer-title{
     font-size: 30px;
   }
+
 
 }
