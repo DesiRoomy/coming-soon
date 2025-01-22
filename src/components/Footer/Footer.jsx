@@ -5,19 +5,6 @@ import {styled} from '@mui/material/styles';
 import {useState} from "react";
 import client from '../../mongoClient';
 
-const FooterButton = styled(Button)({
-  background:'#f4dcf8',
-  color:'#6e6a6a',
-  fontFamily:'Montserrat',
-  fontStyle:'normal',
-  border:'1px solid #6e6a6a',
-  width:'100%',
-  margin:'auto',
-  marginTop:'25px',
-  borderRadius:'10px',
-  lineHeight:'35px',
-  minWidth:'300px'
-})
 const Footer = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
