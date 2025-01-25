@@ -3,7 +3,7 @@ import './Footer.css';
 import {Box,Button, TextField} from '@mui/material';
 import {styled} from '@mui/material/styles';
 import {useState} from "react";
-
+import axiosInstance from "../../axiosHandler.js";
 const FooterButton = styled(Button)({
   background:'#f4dcf8',
   color:'#6e6a6a',
@@ -21,13 +21,36 @@ const Footer = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("")
-
+  const [emailError, setEmailError] = useState("");
+  const [emailErrorText, setEmailErrorText] = useState("");
   async function saveEmailData(emailData) {
+    try {
+      const response = await axiosInstance.post('/submit-email', emailData);
+    }
+    catch (error) {
+      console.error('Error submitting email:', error);
+    }
+  }
 
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+  const resetFields = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
   }
 
   const submitHandler = (event) => {
     event.preventDefault();
+    if (!validateEmail(email)) {
+      console.error('Invalid email format');
+      setEmailErrorText("Invalid email");
+      return;
+    }
+    setEmailError("");
+    setEmailErrorText("");
     const email_data = {
       "first_name": firstName,
         "last_name": lastName,
@@ -38,6 +61,7 @@ const Footer = () => {
     console.log("Last Name: ", lastName);
     console.log("Email: ", email);
     saveEmailData(email_data);
+    resetFields();
   }
 
 
@@ -95,11 +119,14 @@ const Footer = () => {
                     value={email}
                     onChange={handleChange}
                     fullWidth
+                    error={!!emailError}
+                    helperText={emailError}
                     InputLabelProps={{
                       style: {color: 'black'},
                       focused: {style: {color: 'white'}}
                     }}
                 />
+                <div className={'footer-email-error-text'}>{emailErrorText}</div>
                 <Button type="submit" className={'footer-submit'} onSubmit={submitHandler} variant="contained"
                         color="primary" style={{
                   marginTop: '25px',

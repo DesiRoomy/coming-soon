@@ -31,6 +31,13 @@
   font-size: 20px;
 }
 
+.footer-email-error-text {
+    color: #cf0000;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .footer-first-name {
   padding:20px 0px;
   background-color: #f4dcf8;
