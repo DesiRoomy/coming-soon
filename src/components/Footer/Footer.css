@@ -31,6 +31,42 @@
   font-size: 20px;
 }
 
+.footer-email-error-text {
+    color: #cf0000;
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.footer-first-name {
+  padding:20px 0px;
+  background-color: #f4dcf8;
+  color:#6e6a6a;
+  font-family: Montserrat;
+  border: 1px solid #6e6a6a;
+  width: 100%;
+  margin: auto;
+  margin-top:25px;
+  border-style: none;
+  border-radius:10px;
+  line-height:35px;
+  min-width:300px;
+}
+
+.footer-last-name {
+  padding:20px 0px;
+  background-color: #f4dcf8;
+  color:#6e6a6a;
+  font-family: Montserrat;
+  border: 1px solid #6e6a6a;
+  width: 100%;
+  margin: auto;
+  margin-top:25px;
+  border-style: none;
+  border-radius:10px;
+  line-height:35px;
+  min-width:300px;
+}
 .footer-email {
   padding:20px 0px;
   background-color: #f4dcf8;
