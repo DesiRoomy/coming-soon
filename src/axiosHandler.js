@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance with default configuration
 const axiosInstance = axios.create({
-  baseURL: "https://tctmfip8kx.us-east-1.awsapprunner.com/v1/", // Base URL for API requests
+  baseURL: "https://qr-generator-api-dev.onrender.com/v1/", // Base URL for API requests
   timeout: 10000, // Request timeout in milliseconds
   headers: {
     'Content-Type': 'application/json',
