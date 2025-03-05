@@ -4,6 +4,8 @@ import {Box,Button, TextField} from '@mui/material';
 import {styled} from '@mui/material/styles';
 import {useState} from "react";
 import axiosInstance from "../../axiosHandler.js";
+import {createDocument} from "../../appWriteFunctions";
+
 const FooterButton = styled(Button)({
   background:'#f4dcf8',
   color:'#6e6a6a',
@@ -25,7 +27,8 @@ const Footer = () => {
   const [emailErrorText, setEmailErrorText] = useState("");
   async function saveEmailData(emailData) {
     try {
-      const response = await axiosInstance.post('/submit-email', emailData);
+        const response = await createDocument("67c7c3e40039a46ef881", emailData);
+        console.log('Email submitted:', response);
     }
     catch (error) {
       console.error('Error submitting email:', error);
