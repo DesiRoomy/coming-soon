@@ -1,4 +1,4 @@
-import {Client, Databases, ID} from "appwrite";
+import {Account, Client, Databases, ID} from "appwrite";
 
 const client = new Client();
 client
@@ -24,6 +24,15 @@ export const createDocument = async (collectionId, data) => {
 
 }
 
+export const createUser = async (email, password, name) => {
+  const account = new Account(client);
+   try {
+        const response = await account.create(ID.unique(),email, password, name);
+        return response;
+    } catch (error) {
+        console.error("Error creating user:", error);
+   }
+}
 
 
 
