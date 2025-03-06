@@ -25,6 +25,9 @@ const Footer = () => {
   const [email, setEmail] = useState("")
   const [emailError, setEmailError] = useState("");
   const [emailErrorText, setEmailErrorText] = useState("");
+  const [submissionMessage, setSubmissionMessage] = useState("");
+
+
   async function saveEmailData(emailData) {
     const response = await createDocument("67c7c3e40039a46ef881", emailData);
     console.log('Email submitted:', response);
@@ -66,7 +69,12 @@ const Footer = () => {
     console.log("Email: ", email);
     saveEmailData(email_data);
     createUserAccount(email, "default-password", firstName + " " + lastName);
+    setSubmissionMessage("Thank you for submitting!");
     resetFields();
+    // Clear the submission message after 30 seconds
+    setTimeout(() => {
+      setSubmissionMessage("");
+    }, 10000);
   }
 
 
@@ -145,6 +153,7 @@ const Footer = () => {
                   minWidth: '300px'
                 }}>Submit</Button>
               </form>
+              {submissionMessage && <div className="submission-message color-blue">{submissionMessage}</div>}
             </div>
 
           </div>
