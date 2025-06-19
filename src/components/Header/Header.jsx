@@ -17,7 +17,7 @@ const Header = () => {
       setIsMobile(false)
     }
   }
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener('resize',handleMobile);
   })
   return(
